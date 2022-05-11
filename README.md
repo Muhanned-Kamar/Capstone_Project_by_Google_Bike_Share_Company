@@ -11,9 +11,9 @@ The problem we are ,as a company, trying to solve is not consider a problem but 
 2. Why would casual riders buy Cyclistic annual memberships?
 3. How can Cyclistic use digital media to influence casual riders to become members?
 
-To answer those question first we need to see the dataset we will be dealing with and try to organize, ensure credibility, who can access the data, verify the data integrity, see if this data can help me answer the question listed by Moreno, mention any problems with the data, how would it be stored, and a description of all the data sources used, all this will be answered in the next phase the Prepare Phase.
+To answer those question first we need to see the dataset we will be dealing with and try to organize, ensure credibility, who can access the data, verify the data integrity, see if this data can help me answer the question listed by Moreno, mention any problems with the data, how would it be stored, and a description of all the data sources used, all this will be answered in the next phase the **Prepare Phase**.
 
-- **Prepare**:
+## Prepare
 
 This phase will be our first interaction where we will be going through it and try and organize everything so it would be easy to access, clean, and ensure that it is not bias.
 
@@ -26,15 +26,18 @@ The Cyclistic data was taken from Lyft Bikes and Scooters bikeshare company, and
 
 Going through the data life cycle I found that it is unified across all 12 months which indicates that the data has integrity.
 
-Going to next phase Process Phase, there where the cleaning process takes place with all it details.
+Going to next phase **Process Phase**, there where the cleaning process takes place with all it details.
 
-- Process:
+## Process
 
 In this phase the data will be cleaned and manipulated to ensure its cleanness, integrity, and the working effectiveness of the data.
 First , the tools used that will be used will be answer for why this tool will be used starting with :
 
 Excel:
+
 This tool is a good start so I can identify the attributes, formats, and check for errors. Excel works best with small data so we consider that each month is a small data from there we can check each month to ensure credibility and integrity throughout the whole data year.
 
 BiqQuery:
+
 BigQuery works faster than excel when handling large data, so I used it as a way to ensure that the data is cleaned and has integrity from there, we will be ready to analyze data.
+
