@@ -58,3 +58,32 @@ BiqQuery (SQL):
 3. Checked formatting of each of the attributes.
 
 After doing all of this steps the data was ready for the next phase **Analyze Phase** where we will begin to calculate and try to find trends and insights so we can answer the questions Moreno asked.
+
+## Analyze Phase
+
+In this part the real exploration will begin, using SQL (BigQuery) as the analysis tool, we begin by ensuring that the table is organized ,has no duplicated and sorted by ‘started_at’. Checked the format again then manipulated the data to get insights and trends. Found some useful information such as casual users are more than member, but they have the same maximum ride time across the year. Found a relationship between months, days, ride time, and users. All the tables and queries are saved on BigQuery. To summarize the analysis, I will be listing the process made:
+1. Made a table combing all the months table
+2. Calculated the average users per day (users_per_day)
+3. Created a new table with date fir number of users per day (number_of_users_per_day)
+4. Created  the average user ride time per day (avg_user_ride_time)(avg_query)
+5. Created maximum ride time user table (max_member_casual_ride)
+6. Made a new table with date, lat, lng, id, and member or casual (adding_id_by_row_number) (location_new)
+
+Finishing all of these table it is time to visualize all the tables made to furthermore identify and relate relationships in the tables, going to the next phase **Share Phase**.
+
+## Share Phase
+
+After a long time, cleaning, analyzing , and making sure the data is credible we finally came to the part where I can show Moreno and the marketing analytical team the findings and insights I gained from the data.
+
+The data was clear of how the users used the bikes, the data showed us that the date of the usage matters, where it showed that the casual riders where more than the members and the highest number of users for both of casual and member riders was in the summertime from July decreasing to December even more during the weekends. This describes that the vacation time brings more users to use Cyclistic and all of that is show in my dashboard which u can access through this [link](https://public.tableau.com/app/profile/muhanned1728/viz/Trail_1_16515133908630/Dashboard2) . 
+
+Now for the part with the recommendation so that the key findings are clear to every team member this part is called **Act Phase**.
+
+## Act Phase
+
+Going through all the phase we finally got to the last phase where we got a good view of the dashboards and what they give to us. Here will be giving recommendation after knowing that the casual users use Cyclistic bikes more in the summer and even more during the summer weekends.
+Recommendations 
+
+1. I recommend that the company needs a new member ship packages so it can serve the summertime which has the highest casual rider’s users.
+2. Marketing team should consider advertising before one month  and during the summer months to get the most useful outcome from the marketing campaign.
+3. We need to know if there is group or family riders, so we can make more membership packages to serve our client and even more to be more unique in the market. 
