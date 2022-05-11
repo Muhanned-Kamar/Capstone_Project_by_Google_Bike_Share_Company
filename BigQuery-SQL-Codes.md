@@ -18,7 +18,7 @@ For each table uploaded we need to test them and make sure that the data is erro
 
 Creating one table, so it is easier to run queries without going through 12 tables. And checking the credibilty of the data to ensure the data is not bias.
 
-### Query 1 (Table Creationo or Combination)
+### Query 1 (Table Creation or Combination)
 
     CREATE TABLE `voltaic-quest-344909.project_case_study_1.year_2021_data` -- dont forget to use your table destination 
 
