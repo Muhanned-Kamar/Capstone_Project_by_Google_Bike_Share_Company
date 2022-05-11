@@ -57,4 +57,4 @@ BiqQuery (SQL):
 2. Combined all tables into one large table then checked ride_lenght = ‘ 0:00:00’ to remove it which is considered the time of the maintenance of the bikes.
 3. Checked formatting of each of the attributes.
 
-After doing all of this steps the data was ready for the next phase (Analyze Phase)where we will begin to calculate and try to find trends and insights so we can answer the questions Moreno asked.
+After doing all of this steps the data was ready for the next phase **Analyze Phase** where we will begin to calculate and try to find trends and insights so we can answer the questions Moreno asked.
