@@ -8,83 +8,126 @@ For each table uploaded we need to test them and make sure that the data is erro
 
 ### Query 1 (Testing Tables)
 
-SELECT *
+    SELECT *
 
-FROM  `voltaic-quest-344909.project_case_study_1.year_2021_data` -- dont forget to use your table destination 
+    FROM  `voltaic-quest-344909.project_case_study_1.year_2021_data` -- dont forget to use your table destination 
 
--- checking all the tables from June to December
+    -- checking all the tables from June to December
 
 ## Step 2 (Manipulation and Cleaning)
 
 Creating one table, so it is easier to run queries without going through 12 tables. And checking the credibilty of the data to ensure the data is not bias.
 
-### Query 2 (Table Creationo or Combination)
+### Query 1 (Table Creationo or Combination)
 
-CREATE TABLE `voltaic-quest-344909.project_case_study_1.year_2021_data` -- dont forget to use your table destination 
+    CREATE TABLE `voltaic-quest-344909.project_case_study_1.year_2021_data` -- dont forget to use your table destination 
 
-AS ( 
+    AS ( 
     -- Data for the table year_2021
 
-SELECT * FROM `voltaic-quest-344909.project_case_study_1.jan_data` -- Jan Data
+    SELECT * FROM `voltaic-quest-344909.project_case_study_1.jan_data` -- Jan Data
 
-UNION ALL
+    UNION ALL
 
-SELECT * FROM `voltaic-quest-344909.project_case_study_1.feb_data` -- Feb Data
+    SELECT * FROM `voltaic-quest-344909.project_case_study_1.feb_data` -- Feb Data
 
-UNION ALL
+    UNION ALL
 
-SELECT * FROM `voltaic-quest-344909.project_case_study_1.march_data` -- March Data
+    SELECT * FROM `voltaic-quest-344909.project_case_study_1.march_data` -- March Data
 
-UNION ALL
+    UNION ALL
 
-SELECT * FROM `voltaic-quest-344909.project_case_study_1.april_data` -- April Data
+    SELECT * FROM `voltaic-quest-344909.project_case_study_1.april_data` -- April Data
 
-UNION ALL
+    UNION ALL
 
-SELECT * FROM `voltaic-quest-344909.project_case_study_1.may_data` -- May Data
+    SELECT * FROM `voltaic-quest-344909.project_case_study_1.may_data` -- May Data
 
-UNION ALL
+    UNION ALL
 
-SELECT * FROM `voltaic-quest-344909.project_case_study_1.june_data` -- June Data
+    SELECT * FROM `voltaic-quest-344909.project_case_study_1.june_data` -- June Data
 
-UNION ALL
+    UNION ALL
 
-SELECT * FROM `voltaic-quest-344909.project_case_study_1.july_data` -- July Data
+    SELECT * FROM `voltaic-quest-344909.project_case_study_1.july_data` -- July Data
 
-UNION ALL
+    UNION ALL
 
-SELECT * FROM `voltaic-quest-344909.project_case_study_1.aug_data` -- Aug Data
+    SELECT * FROM `voltaic-quest-344909.project_case_study_1.aug_data` -- Aug Data
 
-UNION ALL
+    UNION ALL
 
-SELECT * FROM `voltaic-quest-344909.project_case_study_1.sep_data` -- Sep Data
+    SELECT * FROM `voltaic-quest-344909.project_case_study_1.sep_data` -- Sep Data
 
-UNION ALL
+    UNION ALL
 
-SELECT * FROM `voltaic-quest-344909.project_case_study_1.oct_data` -- Oct Data
+    SELECT * FROM `voltaic-quest-344909.project_case_study_1.oct_data` -- Oct Data
 
-UNION ALL 
+    UNION ALL 
 
-SELECT * FROM `voltaic-quest-344909.project_case_study_1.nov_data` -- Nov Data
+    SELECT * FROM `voltaic-quest-344909.project_case_study_1.nov_data` -- Nov Data
 
-UNION ALL
+    UNION ALL
 
-SELECT * FROM `voltaic-quest-344909.project_case_study_1.dec_data` -- Dec Data 
+    SELECT * FROM `voltaic-quest-344909.project_case_study_1.dec_data` -- Dec Data 
 
-); 
+    ); 
 
--- Created a table called 'year_2021_data' 
+    -- Created a table called 'year_2021_data' 
 ### Query 2 (Cleaning)
 
-DELETE
+    DELETE
 
-FROM `voltaic-quest-344909.project_case_study_1.year_2021_data`
+    FROM `voltaic-quest-344909.project_case_study_1.year_2021_data`
 
-WHERE ride_length= '00:00:00' or ride_id is NULL;
+    WHERE ride_length= '00:00:00' or ride_id is NULL;
 
--- Here we used DELETE clause to ensure that there is no ride ride_length = '00:00:00' or ride_id with a NULL value.
+    -- Here we used DELETE clause to ensure that there is no ride ride_length = '00:00:00' or ride_id with a NULL value.
 
-## Step 3
+## Step 3 (Analysis)
 
-The analysis done was the average user ride time per day
+The analysis done throught the project to get the tables needed to answer the business questions
+
+### Query 1 (Average Users Per Day)
+
+    SELECT member_casual, 
+
+    COUNT(day_of_week)/ 360 AS users_per_day,
+
+    case when day_of_week = 1 then 'Sunday' 
+
+     when day_of_week = 2 then 'Monday' 
+     
+     when day_of_week = 3 then 'Tuesday' 
+     
+     when day_of_week= 4 then 'Wednesday' 
+     
+     when day_of_week = 5 then 'Thrusday' 
+     
+     when day_of_week = 6 then 'Friday' 
+     
+     when day_of_week = 7 then 'Saturday' end  AS day
+
+    FROM `voltaic-quest-344909.project_case_study_1.year_2021_data`
+
+    GROUP BY day_of_week , member_casual
+    ORDER BY COUNT (day_of_week) DESC
+
+    -- I used case clause to change the numbers listed in the table to its corresponding day (Sunday = 1 to Saturday = 7)
+    
+### Query 2 (Average USer Ride Time Per Day)
+
+    SELECT day_of_week,  member_casual, AVG( (EXTRACT(MINUTE FROM  started_at) ) + (EXTRACT (HOUR FROM started_at)*60)) AS total,
+
+    case when day_of_week = 1 then 'Sunday' 
+         when day_of_week = 2 then 'Monday' 
+         when day_of_week = 3 then 'Tuesday' 
+         when day_of_week= 4 then 'Wednesday'  
+         when day_of_week = 5 then 'Thrusday' 
+         when day_of_week = 6 then 'Friday' 
+         when day_of_week = 7 then 'Saturday' end  AS day
+
+    FROM `voltaic-quest-344909.project_case_study_1.year_2021_data`
+
+    GROUP BY day_of_week , member_casual
 
