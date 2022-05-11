@@ -156,6 +156,9 @@ This part is done in two different queries to get the outcome needed
 
     FROM `voltaic-quest-344909.project_case_study_1.year_2021_data`
     )
+    
+    -- Created and used this table to get the number of users per day
+    
   #### Second Query (Number Of Users Per Day)
 
     SELECT  date , member_casual , COUNT (member_casual) AS number_of_users
@@ -182,7 +185,79 @@ This part is done in two different queries to get the outcome needed
 
 ### Query 5 (Users Usage Location)
 
-This part is done in two different queries to get the outcome needed
+This part is done in three different queries to get the outcome needed. The **first trial** I made a large csv which took a long time to process so I came up with a better idea in **second trial**.
 
-  #### First Query
+#### First Query (First Trial)
 
+    CREATE TABLE `voltaic-quest-344909.project_case_study_1.trial_4`
+
+    AS (
+    
+    SELECT  ride_id AS ride_id_2 , CAST (started_at AS date) AS date_2, member_casual AS member_casual_2 , start_lat AS start_lat_2 , start_lng AS start_lng_2
+
+    FROM `voltaic-quest-344909.project_case_study_1.year_2021_data`
+    
+    )
+    
+    -- Created and used this table to get the user usage location so we can ensure that the original table is saved if any errors happended in this step
+    
+#### Second Query (First Trial)
+
+    CREATE TABLE `voltaic-quest-344909.project_case_study_1.trial_5`
+
+    AS (
+    
+    SELECT date_2
+
+    FROM `voltaic-quest-344909.project_case_study_1.trial_4` 
+ 
+    GROUP BY  date_2
+    
+    )
+    
+    -- Made a table for only the date so we can then us the Join clause in the next query without any unnecessary errors
+    
+#### Third Query (First Trial)
+    
+    SELECT ride_id, member_casual, start_lat, start_lng, end_lat, end_lng, country, city,
+    
+    COUNT (member_casual) AS number_of_users ,CAST (started_at AS date) AS date 
+
+    FROM `voltaic-quest-344909.project_case_study_1.year_2021_data`
+
+    FULL OUTER JOIN `voltaic-quest-344909.project_case_study_1.trial_5` ON CAST (started_at AS date)=date_2
+
+    GROUP BY  ride_id ,member_casual , start_lat , start_lng , end_lat, end_lng , country , city , CAST (started_at AS date) , date_2
+
+
+    -- grouped by the exact location of using the bikes and the end location too, to maximize the accuracy of the analysis 
+    
+#### First Query (Second Trial)
+
+    CREATE TABLE `voltaic-quest-344909.project_case_study_1.trial_7`
+
+    AS (
+    
+    SELECT  ride_id AS ride_id_2 , CAST (started_at AS date) AS date_2, member_casual AS member_casual_2 , start_lat AS start_lat_2 , start_lng AS start_lng_2
+
+    FROM `voltaic-quest-344909.project_case_study_1.year_2021_data`
+    
+    )
+    
+    -- Created and used this table to get the user usage location so we can ensure that the original table is saved if any errors happended in this step
+
+#### Second Query (Second Trial)
+
+    SELECT start_lat , start_lng , member_casual ,end_lat, end_lng, ROW_NUMBER ()
+    OVER (ORDER BY start_lat) AS id
+
+    FROM `voltaic-quest-344909.project_case_study_1.trial_7`
+
+    GROUP BY start_lat , start_lng ,member_casual ,end_lat, end_lng
+    
+    -- This query would give us the grouped loaction point so we can see the most used locations of the riders 
+    -- Used ROW_NUMBER to make an id column to help make the visualization easier.
+    
+    
+    
+    
