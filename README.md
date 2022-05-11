@@ -112,5 +112,6 @@ Going through all the phase we finally got to the last phase where we got a good
 ### Recommendations 
 
 1. I recommend that the company needs a new member ship packages so it can serve the summertime which has the highest casual rider’s users.
-2. Marketing team should consider advertising before one month  and during the summer months to get the most useful outcome from the marketing campaign.
-3. We need to know if there is group or family riders, so we can make more membership packages to serve our client and even more to be more unique in the market. 
+2. Marketing team should consider advertising before one month and during the summer months to get the most successful outcome from the marketing campaign.
+3. We need to know if there are group or family riders, so we can make more membership packages to serve our clients and to be more unique in the market. 
+4. Marketing campaigns could be near the beach where there are alot of users and location, for the socail media we can advertise on platforms like instagram, tiktok, and facebook we should include videos, packages and see if we can add bloggers, influencers, and vloggers to our campaign.
