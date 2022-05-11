@@ -41,3 +41,21 @@ BiqQuery:
 
 BigQuery works faster than excel when handling large data, so I used it as a way to ensure that the data is cleaned and has integrity from there, we will be ready to analyze data.
 
+Second,  this is the part for documenting the cleaning process and manipulation of the data. This process took place in both Excel and BigQuery.
+Excel cleaning and manipulation process:
+1.Sorted by ‘started_at’
+2.Filtered all columns to check for NULLS
+3.Checked for any duplication in the ‘ride_id’
+4.Made a new column ‘ride_length’ to calculate the length of each ride time
+5.Made a new column to calculate the day of week 
+6.Used conditional formatting for ride_length’ to check if ant errors where there
+
+ -Swapped some of the stared_at & ended_at data because they were inputted wrong
+BiqQuery (SQL):
+1.To ensure credibility and integrity
+	-Checked for null and tested each table
+	-Checked for duplication in the ride_id 
+2.Combined all tables into one large table then checked ride_lenght = ‘ 0:00:00’ to remove it which is considered the time of the maintenance of the bikes.
+3.Checked formatting of each of the attributes.
+
+After doing all of this steps the data was ready for the next phase (Analyze Phase)where we will begin to calculate and try to find trends and insights so we can answer the questions Moreno asked.
