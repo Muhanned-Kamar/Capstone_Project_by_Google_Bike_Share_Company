@@ -1,6 +1,6 @@
 # Project 1: Google Data Analytics Capstone Project 
 
-## Introducation
+## Introduction
 
 This is a case study for a bike share company named ‘Cyclistic’ located in Chicago,  I will be testing my abilities as a junior data analyst working with the marketing analyst team to achieve the company’s future success which depends on maximizing the number of annual memberships. The main question to be answered through the analysis is how casual riders and annual members us Cyclistic bikes differently. From these insights, my team will design a new marketing strategy to convert casual riders into annual members. But first, Cyclistic executives must approve my recommendations, so I must back up with compelling data insights and professional data visualizations.
 
