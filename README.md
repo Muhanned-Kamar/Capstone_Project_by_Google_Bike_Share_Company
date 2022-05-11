@@ -49,8 +49,7 @@ Excel cleaning and manipulation process:
 4. Made a new column ‘ride_length’ to calculate the length of each ride time
 5. Made a new column to calculate the day of week 
 6. Used conditional formatting for ride_length’ to check if ant errors where there
-- Swapped some of the stared_at & ended_at data because they were inputted wrong
-
+	- Swapped some of the stared_at & ended_at data because they were inputted wrong
 BiqQuery (SQL):
 1. To ensure credibility and integrity
 	- Checked for null and tested each table
