@@ -193,13 +193,15 @@ This part is done in three different queries to get the outcome needed. The **fi
 
     AS (
     
-    SELECT  ride_id AS ride_id_2 , CAST (started_at AS date) AS date_2, member_casual AS member_casual_2 , start_lat AS start_lat_2 , start_lng AS start_lng_2
+    SELECT  ride_id AS ride_id_2 , CAST (started_at AS date) AS date_2, 
+    
+    member_casual AS member_casual_2 , start_lat AS start_lat_2 , start_lng AS start_lng_2
 
     FROM `voltaic-quest-344909.project_case_study_1.year_2021_data`
     
     )
     
-    -- Created and used this table to get the user usage location so we can ensure that the original table is saved if any errors happended in this step
+    --- Created and used this table to ensure that the original table is saved if any errors happended in this next step
     
 #### Second Query (First Trial)
 
@@ -238,13 +240,15 @@ This part is done in three different queries to get the outcome needed. The **fi
 
     AS (
     
-    SELECT  ride_id AS ride_id_2 , CAST (started_at AS date) AS date_2, member_casual AS member_casual_2 , start_lat AS start_lat_2 , start_lng AS start_lng_2
+    SELECT  ride_id AS ride_id_2 , CAST (started_at AS date) AS date_2, 
+    
+    member_casual AS member_casual_2 , start_lat AS start_lat_2 , start_lng AS start_lng_2
 
     FROM `voltaic-quest-344909.project_case_study_1.year_2021_data`
     
     )
     
-    -- Created and used this table to get the user usage location so we can ensure that the original table is saved if any errors happended in this step
+    -- Created and used this table to ensure that the original table is saved if any errors happended in this next step
 
 #### Second Query (Second Trial)
 
@@ -258,6 +262,6 @@ This part is done in three different queries to get the outcome needed. The **fi
     -- This query would give us the grouped loaction point so we can see the most used locations of the riders 
     -- Used ROW_NUMBER to make an id column to help make the visualization easier.
     
-    
-    
+Ues this [link](https://public.tableau.com/app/profile/muhanned1728/viz/Trail_1_16515133908630/Dashboard2) to get a look at the viz of the tables created.    
+ 
     
