@@ -4,7 +4,7 @@
 
 This is a case study for a bike share company named ‘Cyclistic’ located in Chicago,  I will be testing my abilities as a junior data analyst working with the marketing analyst team to achieve the company’s future success which depends on maximizing the number of annual memberships. The main question to be answered through the analysis is how casual riders and annual members us Cyclistic bikes differently. From these insights, my team will design a new marketing strategy to convert casual riders into annual members. But first, Cyclistic executives must approve my recommendations, so I must back up with compelling data insights and professional data visualizations.
 
-Characters and teams 
+### Characters and teams 
 
 - **Cyclistic**: A bike-share program that features more than 5,800 bicycles and 600 docking stations. Cyclistic sets itself apart by also offering reclining bikes, hand tricycles, and cargo bikes, making bike-share more inclusive to people with disabilities and riders who can’t use a standard two-wheeled bike. The majority of riders opt for traditional bikes; about 8% of riders use the assistive options. Cyclistic users are more likely to ride for leisure, but about 30% use them to commute to work each day. 
 - **Lily Moreno**: The director of marketing and your manager. Moreno is responsible for the development of campaigns and initiatives to promote the bike-share program. These may include email, social media, and other channels. 
