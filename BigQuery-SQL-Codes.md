@@ -262,6 +262,6 @@ This part is done in three different queries to get the outcome needed. The **fi
     -- This query would give us the grouped loaction point so we can see the most used locations of the riders 
     -- Used ROW_NUMBER to make an id column to help make the visualization easier.
     
-Ues this [link](https://public.tableau.com/app/profile/muhanned1728/viz/Trail_1_16515133908630/Dashboard2) to get a look at the viz of the tables created.    
+Use this [link](https://public.tableau.com/app/profile/muhanned1728/viz/Trail_1_16515133908630/Dashboard2) to get a look at the viz of the tables created.    
  
     
